@@ -1,0 +1,39 @@
+#login {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: darkblue;
+	font-size: 16pt;
+	font-family: fantasy;
+}
+#logo {
+	width: 250px;
+	height: 90px;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background: url('logo.png');
+}
+
+.login_button{
+	margin: 15px;
+	padding: 10px;
+}
+
+#logout {
+	color: darkblue;
+	font-family: fantasy;
+	float: right;
+	font-size: 16pt;
+}
+
+#getHelp {
+	color: darkblue;
+	font-family: fantasy;
+	font-size: 16pt;
+}
+
+#TutorenOn, #Requests  {
+	color: darkblue;
+}

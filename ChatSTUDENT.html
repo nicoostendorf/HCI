@@ -1,116 +1,10 @@
 <html>
 <head>
-<title>StackOverflow</title>
-<style>
-
-#logout {
-                width: 200;
-                height: 60
-                margin: 0 auto;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                float: right;
-                font-size: 3em;
-                display: inline;
-}
-
-.message-other
-{
-	background-color: #dbdbdb;
-	text-align: left;
-}
-
-.message-yours
-{
-	text-align: right;
-	background-color: gray;
-}
-
-.panel-heading{
-  text-align: right;
-}
-
-.container{
-	
-	display:block;
-    bottom: 0;
-	
-}
-
-.panel-body{
-	border-style: solid;
-	border-width: 2px;
-	height: 450px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	overflow-y: scroll;
-}
-
-
-.panel-footer{
-	padding-top: 10px;
-	border-style: solid;
-	border-width: 2px;	
-	padding-bottom: 10px;
-}
-
-.sendButton{
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  color: darkblue;
-  font-family: fantasy;
-  font-size: 20px;
-  width: 15%;
-  height: 30px;
-
-}
-.textfield{
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  width: 80%;
-  height: 30px;
-}
-
-.grid-container {
-  display: grid;
-  grid-gap: 10px;
-  padding: 10px;
-  height: 90%;
-  width: 100%;
-  position: absolute;
-}
-
-.grid-item {
-  padding: 20px;
-}
-
-.item1 {
-	grid-column: 1 / span 1;
-	grid-row: 1 / span 2;
-}
-
-.item2 {
-	grid-column: 2 / span 1;
-	grid-row: 1 / span 1;
-}
-
-.item3 {
-	grid-column: 2 / span 1;
-	grid-row: 2 span 1;
-	text-align: bottom;
-	bottom: 0;
-	background-color: rgba(0,0,204, 0.2);
-	
-}
-
-</style>
-<script >
+<title>StackOverflow - Chat</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="chat_style.css" media="screen" />
+<script>
 
 var chatison = true;
 	
@@ -129,13 +23,9 @@ async  function myLoop () {
 
 }
 
-
-
 function init() {
 	myLoop()
 }
-
-
 
 function sende(){
 	var message = document.getElementById('MessageBox').value;
@@ -164,7 +54,6 @@ function SQLite(name, message) {
 		};
 		xmlhttp.open("GET","getdata.php?a="+message+" &b="+ name +" &n=1",true);
 		xmlhttp.send();
-		
 }
 
 
@@ -179,7 +68,7 @@ function SQLite(name, message) {
 	  </div>
 	  
 	  <div class="grid-item item2">
-			<input id = logout type="submit" name="submit" value="STUDENT Logout">
+			<a href="LoginSTUDENT.html" title="login_page"><button id="logout" type="submit" name="submit">STUDENT Logout</button></a>
 	  </div>
 	  
 	  <div class="grid-item item3">
@@ -198,19 +87,13 @@ function SQLite(name, message) {
 					  <div class="panel-footer">
 						 <div class="input-group">
 						  <input type="text" class="textfield" id="MessageBox">
-						  <span class="input-group-btn">
 							<button class="sendButton" onclick="sende()" type="button">Senden</button>
-						  </span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	  
-	 
-	  </div>   
-	 
-	 
+	  </div>
 	</div>
 </div>	
 </body>

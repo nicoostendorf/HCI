@@ -3,41 +3,13 @@
     <head>
         <title>StackOverflow</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <style type="text/css">
-            #logout {
-                width: 200;
-                height: 60
-                margin: 0 auto;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                float: right;
-                font-size: 3em;
-                display: inline;
-            }
-            #getHelp {
-                width: 200;
-                height: 60;
-                margin-left: 100px;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                font-size: 3em;
-            }
-            #TutorenOn {
-                color: darkblue;
-                margin-left: 600px;
-                display: inline;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     </head>
     <body>
-        <br>
-        <input id = logout type="submit" name="submit" value="STUDENT Logout">
+        <a href="LoginSTUDENT.html"><button id="logout" type="submit" name="submit">STUDENT Logout</button></a>
         <img src='Web.png',width= '200', height= '600'>
-        <br>
-        <input id=getHelp type="submit" name="submit" value="GET HELP">
+		<br>
+        <a href="ChatSTUDENT.html"><button id="getHelp" type="submit" name="submit">Get Help</button></a>
         <p id= "TutorenOn">Tutoren online: 2 </p>
     </body>
 </html>

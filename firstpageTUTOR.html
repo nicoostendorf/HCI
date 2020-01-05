@@ -3,50 +3,16 @@
     <head>
         <title>StackOverflow</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <style type="text/css">
-            #logout {
-                width: 200;
-                height: 60
-                margin: 0 auto;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                float: right;
-                font-size: 3em;
-                display: inline;
-            }
-            #getHelp {
-                width: 200;
-                height: 60;
-                margin-left: 0px;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                font-size: 3em;
-
-            }
-            #Requests {
-                color: darkblue;
-                margin-left: 800px;
-                margin-top: 300px;
-                
-            }
-            .links {
-                float: left;
-                margin-right: 10px;
-            }
-
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
         </style>
     </head>
     <body>
         <br>
-        <input id = logout type="submit" name="submit" value="TUTOR Logout">
+		<a href="LoginTUTOR.html"><button id="logout" type="submit" name="submit">TUTOR Logout</button></a>
         <br>
-        <div class="links">
-            <img src='Web.png',width= '200', height= '600'>
-            <br>
-            <input id=getHelp type="submit" name="submit" value="GO HELP">
-        </div>
+		<img src='Web.png',width= '200', height= '600'>
+		<br>
+		<a href="ChatTUTOR.html"><button id="getHelp" type="submit" name="submit">Go help</button></a>
         <p id= "Requests">REQUESTS: 2 </p>
     
     </body>
