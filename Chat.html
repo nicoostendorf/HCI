@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>StackOverflow</title>
+<style>
+
+
+
+.message-other
+{
+	background-color: #dbdbdb;
+	text-align: left;
+}
+
+.message-yours
+{
+	text-align: right;
+	background-color: gray;
+}
+
+.panel-heading{
+  text-align: right;
+}
+
+.container{
+	
+	display:block;
+    bottom: 0;
+	
+}
+
+.panel-body{
+	border-style: solid;
+	border-width: 2px;
+	height: 450px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	overflow-y: scroll;
+}
+
+
+.panel-footer{
+	padding-top: 10px;
+	border-style: solid;
+	border-width: 2px;	
+	padding-bottom: 10px;
+}
+
+.sendButton{
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: darkblue;
+  font-family: fantasy;
+  font-size: 20px;
+  width: 15%;
+  height: 30px;
+
+}
+.textfield{
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  width: 80%;
+  height: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  height: 90%;
+  width: 100%;
+  position: absolute;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+.item1 {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 2;
+}
+
+.item2 {
+	grid-column: 2 / span 1;
+	grid-row: 1 / span 1;
+}
+
+.item3 {
+	grid-column: 2 / span 1;
+	grid-row: 2 span 1;
+	text-align: bottom;
+	bottom: 0;
+	background-color: rgba(0,0,204, 0.2);
+	
+}
+
+</style>
+<script >
+
+var chatison = true;
+	
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async  function myLoop () {           
+
+	while(chatison){
+		var name = document.getElementById('UserNameBox').value;
+		SQLite(name,"");
+		await sleep(500);
+	}
+
+}
+
+
+
+function init() {
+	myLoop()
+}
+
+
+
+function sende(){
+	var message = document.getElementById('MessageBox').value;
+	var name = document.getElementById('UserNameBox').value;
+	if (message.localeCompare("End") == 0)chatison = true;
+	SQLite(name, message);
+this.scrollTop = this.scrollHeight;
+
+document.getElementById('MessageBox').value = "";
+}
+
+//Lässt sich theoretisch als Gruppen-Chat nutzen, wenn Datenbank und Apache-Server online sind (z.B. über XAMPP)
+function SQLite(name, message) {
+		if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				if (this.responseText != "AKTUELL"){
+					document.getElementById("Tabelle").innerHTML = this.responseText;
+					console.log(this.responseText);
+				}
+			}
+		};
+		xmlhttp.open("GET","getdata.php?a="+message+" &b="+ name +" &n=1",true);
+		xmlhttp.send();
+		
+}
+
+
+</script>
+</head>
+ <BODY onload="init()"  >
+ 
+	<div class="grid-container">
+	  <div class="grid-item item1" >
+					<img src="Web.png" style="height:97%;">
+					<br>Aktuell in der Warteschlange: 1
+	  </div>
+	  
+	  <div class="grid-item item2">
+			<div class="panel-heading"><input type="text" id="UserNameBox" value="Student"><button class="sendButton" onclick="sende()" type="button">Logout</button></div>
+	  </div>
+	  
+	  <div class="grid-item item3">
+		 <div class="container">
+		<div class="row">
+			<div class="chat">
+			 <div class="panel-body">
+				<div  id="Tabelle" >
+					<div class='container'  >
+						<div class='row message-yours'><p class='text-muted'>Student:</p><p>Nachricht 1</p> </div>
+						<div class='row message-other'><p class='text-muted'>Tutor:</p><p>Nachricht 2</p></div>
+					
+					</div>
+				</div>
+				  </div>
+					  <div class="panel-footer">
+						 <div class="input-group">
+						  <input type="text" class="textfield" id="MessageBox">
+						  <span class="input-group-btn">
+							<button class="sendButton" onclick="sende()" type="button">Senden</button>
+						  </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  
+	 
+	  </div>   
+	 
+	 
+	</div>
+</div>	
+</body>
+</html>
