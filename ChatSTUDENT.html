@@ -3,7 +3,17 @@
 <title>StackOverflow</title>
 <style>
 
-
+#logout {
+                width: 200;
+                height: 60
+                margin: 0 auto;
+                text-align: center;
+                color: darkblue;
+                font-family: fantasy;
+                float: right;
+                font-size: 3em;
+                display: inline;
+}
 
 .message-other
 {
@@ -165,11 +175,11 @@ function SQLite(name, message) {
 	<div class="grid-container">
 	  <div class="grid-item item1" >
 					<img src="Web.png" style="height:97%;">
-					<br>Aktuell in der Warteschlange: 1
+					<br>
 	  </div>
 	  
 	  <div class="grid-item item2">
-			<div class="panel-heading"><input type="text" id="UserNameBox" value="Student"><button class="sendButton" onclick="sende()" type="button">Logout</button></div>
+			<input id = logout type="submit" name="submit" value="STUDENT Logout">
 	  </div>
 	  
 	  <div class="grid-item item3">
