@@ -52,6 +52,20 @@
 	height: 30px;
 
 }
+.exitButton{
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	color: darkblue;
+	font-family: fantasy;
+	font-size: 20px;
+	width: 30%;
+	height: 30px;
+	margin-left: 50px
+}
 .textfield{
 	text-decoration: none;
 	display: inline-block;

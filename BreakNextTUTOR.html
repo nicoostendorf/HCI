@@ -3,18 +3,9 @@
     <head>
         <title>StackOverflow</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="chat_style.css" media="screen" />
         <style type="text/css">
-            #logout {
-                width: 200;
-                height: 60
-                margin: 0 auto;
-                text-align: center;
-                color: darkblue;
-                font-family: fantasy;
-                float: right;
-                font-size: 3em;
-                display: inline;
-            }
             #getHelp {
                 width: 200;
                 height: 60;
@@ -46,15 +37,15 @@
     </head>
     <body>
         <br>
-        <input id = logout type="submit" name="submit" value="TUTOR Logout">
+        <a href="LoginTUTOR.html"><button id="logout" type="submit" name="submit">TUTOR Logout</button></a>
         <br>
         <div class="links">
             <img src='Web.png',width= '200', height= '600'>
             <br>
             <p id= "Requests">REQUESTS: 2 </p>
         </div>
-        <input id=getHelp type="submit" name="submit" value="BREAK">
-        <input id=getHelp type="submit" name="submit" value="NEXT">
+        <a href="firstpageTUTOR.html"><input id=getHelp type="submit" name="submit" value="BREAK"></a>
+        <a href="ChatTUTOR.html"><input id=getHelp type="submit" name="submit" value="NEXT"></a>
     
     </body>
 </html>
