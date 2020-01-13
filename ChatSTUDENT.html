@@ -16,7 +16,7 @@ function sleep(ms) {
 async  function myLoop () {           
 
 	while(chatison){
-		var name = document.getElementById('UserNameBox').value;
+		var name = "Student";
 		SQLite(name,"");
 		await sleep(500);
 	}
@@ -24,12 +24,18 @@ async  function myLoop () {
 }
 
 function init() {
+	document.getElementById('MessageBox').addEventListener("keydown", function(event) {
+	if (event.which)
+	  if (event.which == 13 && document.getElementById('MessageBox').value != ""){
+		sende();
+	  }
+	})
 	myLoop()
 }
 
 function sende(){
 	var message = document.getElementById('MessageBox').value;
-	var name = document.getElementById('UserNameBox').value;
+	var name = "Student";
 	if (message.localeCompare("End") == 0)chatison = true;
 	SQLite(name, message);
 this.scrollTop = this.scrollHeight;
