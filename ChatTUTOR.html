@@ -41,11 +41,15 @@ function init() {
 function sende(){
 	var message = document.getElementById('MessageBox').value;
 	var name = "Tutor";
-	if (message.localeCompare("End") == 0)chatison = true;
+	if (message.localeCompare("End") == 0){
+		chatison = true;
+	} else {
+		alert("Es besteht Momentan keine Verbindung zum Server!\nWenden sie sich an den Administrator");
+	} 
 	SQLite(name, message);
-this.scrollTop = this.scrollHeight;
+	this.scrollTop = this.scrollHeight;
 
-document.getElementById('MessageBox').value = "";
+	document.getElementById('MessageBox').value = "";
 }
 
 //Lässt sich theoretisch als Gruppen-Chat nutzen, wenn Datenbank und Apache-Server online sind (z.B. über XAMPP)
@@ -60,6 +64,7 @@ function SQLite(name, message) {
 				if (this.responseText != "AKTUELL"){
 					document.getElementById("Tabelle").innerHTML = this.responseText;
 					console.log(this.responseText);
+
 				}
 			}
 		};
