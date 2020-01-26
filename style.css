@@ -11,15 +11,6 @@
 	text-align: center;
 	background: url('logo.png');
 }
-#logoReg {
-	width: 250px;
-	height: 90px;
-	margin-top: 5%;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	background: url('logoReg.png');
-}
 
 .login_button {
 	margin: 15px;
