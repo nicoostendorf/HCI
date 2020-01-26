@@ -4,17 +4,46 @@
         <title>StackOverflow - Login for Students</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-        <div id="login">
+		<div id="login">
             <div id="logo"></div>
-		    <p>Benutzername:</p>
-			<input type="text" name="username" value="" size="25"><br>
-			<p>Passwort:</p>
-			<input type="password" name="password" value="" size="25"><br>
-			<a href="firstpageSTUDENT.html" title="login_page"><button class="login_button" type="submit" name="submit">Login</button></a><br>
-            <a href="Register.html" title="login_page"><button class="login_button" type="submit" name="submit"> Registrieren</button></a>
+			<div class="container">
+				<div class="row">
+					<div class="col"></div>
+					<div class="col">
+						<form action="index.php" method="post">
+							<div class="form-group">
+								<label for="username_input">Username</label>
+								<input type="text" class="form-control" id="username_input" name="username" value="">
+							</div>
+							<div class="form-group">
+								<label for="password_input">Password</label>
+								<input type="text" class="form-control" id="password_input" name="password" value="">
+							</div>
+							<a class="btn btn-primary" href="firstpageSTUDENT.html" type="submit" name="submit" value="Login" role="button">Login</a>
+							<div class="form-group">
+								<small class="form-text text-muted">Not registered? <a href="Register.html" title="login_page">Create a student account</a></small>
+							</div>
+						</form>
+					</div>
+					<div class="col"></div>
+				</div>
+			</div>
         </div>
+        <!-- <div id="login"> -->
+            <!-- <div id="logo"></div> -->
+		    <!-- <p>Benutzername:</p> -->
+			<!-- <input type="text" name="username" value="" size="25"><br> -->
+			<!-- <p>Passwort:</p> -->
+			<!-- <input type="password" name="password" value="" size="25"><br> -->
+			<!-- <a href="firstpageSTUDENT.html" title="login_page"><button class="login_button" type="submit" name="submit">Login</button></a><br> -->
+            <!-- <a href="Register.html" title="login_page"><button class="login_button" type="submit" name="submit"> Registrieren</button></a> -->
+        <!-- </div> -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
 

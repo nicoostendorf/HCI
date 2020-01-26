@@ -1,10 +1,6 @@
 #login {
 	width: 100%;
 	margin: 0 auto;
-	text-align: center;
-	color: darkblue;
-	font-size: 16pt;
-	font-family: fantasy;
 }
 #logo {
 	width: 250px;
@@ -15,7 +11,7 @@
 	text-align: center;
 	background: url('logo.png');
 }
-#logoReg{
+#logoReg {
 	width: 250px;
 	height: 90px;
 	margin-top: 5%;
@@ -25,31 +21,7 @@
 	background: url('logoReg.png');
 }
 
-.login_button{
+.login_button {
 	margin: 15px;
 	padding: 10px;
-}
-
-#logout {
-	color: darkblue;
-	font-family: fantasy;
-	float: right;
-	font-size: 16pt;
-}
-
-#faq {
-	color: darkblue;
-	font-family: fantasy;
-	float: center;
-	font-size: 16pt;
-}
-
-#getHelp {
-	color: darkblue;
-	font-family: fantasy;
-	font-size: 16pt;
-}
-
-#TutorenOn, #Requests  {
-	color: darkblue;
 }
