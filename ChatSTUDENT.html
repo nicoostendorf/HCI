@@ -3,7 +3,7 @@
 <title>StackOverflow - Chat</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="chat_style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="chat_style1.css" media="screen" />
 <script>
 
 var chatison = true;
@@ -91,7 +91,7 @@ function SQLite(name, message) {
 			</ul>
 			<span class="nav-link disabled" style="margin-right: 15px; border-right: 1px solid rgba(0,0,0,.2);">You are logged in as a student</span>
 			<form class="form-inline my-2 my-lg-0">
-				<a class="btn btn-outline-secondary my-2 my-sm-0" href="loginSTUDENT.html" role="button" id="logout" type="submit" name="submit">Logout</a>
+				<a class="btn btn-outline-secondary my-2 my-sm-0" href="welcome_page.html" role="button" id="logout" type="submit" name="submit">Logout</a>
 			</form>
 		</div>
 	</nav>
@@ -99,7 +99,7 @@ function SQLite(name, message) {
 		<div class="row">
 			<div class="col-xl-6">
 				<h1 class="display-4">Current assignment</h1>
-				<div class="card">
+				<div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 6px 10px 0 rgba(0, 0, 0, 0.01);">
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
@@ -131,18 +131,41 @@ function SQLite(name, message) {
 						<a class="btn btn-danger" href="firstpageSTUDENT.html" role="button" id="logout" type="button" name="submit">Exit chat</a>						
 					</form>
 				</form>
-				<div class="chat">
-					<div class="panel-body">
-						<div  id="Tabelle" >
-							<div class='container'>
-								<div class='row message-other'><p class='text-muted'>Tutor: </p><p> Hi, how can i help you?</p></div>
+				<div class="jumbotron m-0 p-0 bg-transparent">
+					<div class="card border-0 rounded" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 6px 10px 0 rgba(0, 0, 0, 0.01); height: calc(100% - 75px);">
+						<div class="card-header p-1 bg-light border border-top-0 border-left-0 border-right-0" style="color: rgba(96, 125, 139,1.0);">
+							<img class="rounded float-left" style="width: 50px; height: 50px;" src="https://images.squarespace-cdn.com/content/v1/5accd58989c17259a7bc8808/1567774856523-4AU5CG7TK1EH74BKGLBM/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwkCFOLgzJj4yIx-vIIEbyWWRd0QUGL6lY_wBICnBy59Ye9GKQq6_hlXZJyaybXpCc/placeholder-m+%281%29.png" />
+							<h6 class="float-left" style="margin: 0px; margin-left: 10px;">Moritz DoubleG <i class="fa fa-check text-primary" title="" aria-hidden="true"></i> </br><small> Hannover, DE </small></h6>
+							<div class="dropdown show">
+								<a id="dropdownMenuLink" data-toggle="dropdown" class="btn btn-sm float-right text-secondary" role="button"><h5><i class="fa fa-ellipsis-h" title="Ayarlar!" aria-hidden="true"></i>&nbsp;</h5></a>
+								<div class="dropdown-menu dropdown-menu-right border p-0" aria-labelledby="dropdownMenuLink">
+									<a class="dropdown-item p-2 text-secondary" href="#"> <i class="fa fa-user m-1" aria-hidden="true"></i> Profile </a>
+									<hr class="my-1"></hr>
+									<a class="dropdown-item p-2 text-secondary" href="#"> <i class="fa fa-trash m-1" aria-hidden="true"></i> Delete </a>
+								</div>
+							</div>		
+						</div>
+						<div class="card bg-sohbet border-0 m-0 p-0" style="height: 100%">
+							<div id="sohbet" class="card border-0 m-0 p-0 position-relative bg-transparent">
+								<div class="balon2 p-2 m-0 position-relative" id="Tabelle" data-is="Tutor:">
+									<a class="float-left">Hi, how can i help you? </a>
+								</div>
+								<div class="balon1 p-2 m-0 position-relative" id="Tabelle" data-is="You:">
+									<a class="float-right sohbet2">I have a question about assignment 13</a>
+								</div>				
 							</div>
 						</div>
-					</div>
-					<div class="panel-footer">
-						<div class="input-group">
-							<input type="text" class="textfield" id="MessageBox">
-							<button class="sendButton" onclick="sende()" type="button">Send</button>
+						<div class="w-100 card-footer p-0 bg-light border border-bottom-0 border-left-0 border-right-0">	
+							<form class="m-0 p-0" action="" method="POST" autocomplete="off">
+								<div class="row m-0 p-0">
+									<div class="col-9 m-0 p-1">
+										<input id="MessageBox" class="mw-100 border rounded form-control" type="text" name="text" title="Type a message..." placeholder="Type a message..." required>
+									</div>
+									<div class="col-3 m-0 p-1">
+										<button class="btn btn-outline-secondary rounded border w-100" onclick="sende()" type="button">Send</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
