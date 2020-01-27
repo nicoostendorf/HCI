@@ -40,13 +40,15 @@ function sende(){
 	if (message.localeCompare("End") == 0){
 		chatison = true;
 	} else {
-		alert("Es besteht Momentan keine Verbindung zum Server!\nWenden sie sich an den Administrator");
+		alert("There is currently no connection to the server!\n Please contact the administrator");
 	} 
 	SQLite(name, message);
 	this.scrollTop = this.scrollHeight;
 	document.getElementById('MessageBox').value = "";
 }
-
+function report(){
+	alert("The user was reported due to improper use. The chat log will be checked in the near future.");
+}
 //Lässt sich theoretisch als Gruppen-Chat nutzen, wenn Datenbank und Apache-Server online sind (z.B. über XAMPP)
 function SQLite(name, message) {
 		if (window.XMLHttpRequest) {
@@ -124,14 +126,14 @@ function SQLite(name, message) {
 			<div class="col-xl-6">
 				<form class="form-inline my-2 my-lg-0">
 					<h1 class="display-4">Chat</h1>
-					<a class="btn btn-danger ml-auto" href="firstpageSTUDENT.html"  onclick="sende()" role="button" id="logout" type="button" name="submit">Exit chat</a>
+					<a class="btn btn-danger ml-auto" href="firstpageSTUDENT.html" role="button" id="logout" type="button" name="submit">Exit chat</a>
+					<a class="btn btn-danger ml-auto" href="firstpageSTUDENT.html"  onclick="report()" role="button" id="logout" type="button" name="submit">Report User</a>
 				</form>
 				<div class="chat">
 					<div class="panel-body">
 						<div  id="Tabelle" >
 							<div class='container'  >
-								<div class='row message-yours'><p class='text-muted'>Student:</p><p>Nachricht 1</p> </div>
-								<div class='row message-other'><p class='text-muted'>Tutor:</p><p>Nachricht 2</p></div>
+								<div class='row message-other'><p class='text-muted'>Tutor:</p><p>Herzlich Willkommen</p></div>
 							</div>
 						</div>
 					</div>
